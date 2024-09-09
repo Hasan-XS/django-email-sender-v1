@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mail App</title>
+    <link
+      rel="icon"
+      href="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/50/external-mail-japanese-wedding-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"
+      alt="external-mail-japanese-wedding-vitaliy-gorbachev-lineal-color-vitaly-gorbachev"
+    />
+    <style>
+      h1 {
+        margin: 10px auto 20px auto;
+        color: rgb(179, 0, 0);
+        display: block;text-align: center;
+      }
+      input {
+        width: 300px;
+        height: 25px;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      textarea {
+        resize: none;
+        width: 302px;
+        height: 100px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      input[type="submit"] {
+        width: 150px;
+        height: 30px;
+        background-color: rgb(128, 0, 0);
+        color: white;
+        border: none;
+        margin: 0 auto;
+        border-radius: 8px;
+      }
+      p{
+        background-color: darkgreen;
+        color: bisque;
+        text-shadow: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Django Email App<br>Created By Smart-idustries Ha3an-XS</h1>
+
+      <form action="/" method="post">
+        {% csrf_token %}
+        <label for="address">To:</label>
+        <input id="address" type="email" name="address" />
+
+        <label for="subject">Subject:</label>
+        <input id="subject" name="subject" />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message"></textarea>
+
+          <input type="submit" />
+      </form>
+      <p>{{ result }}</p>
+    </div>
+  </body>
+</html>
